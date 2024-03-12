@@ -4,8 +4,14 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        Person[] persons = new Person[5];
+        Person[] people = {
+                new Person("John", 15),
+                new Person("Juan", 19),
+                new Person("Martha", 26),
+                new Person("Lizeth", 13),
+                new Person("Luffy", 16),
+        };
 
-        persons[0] = new Person("John",15);
+        System.out.println(OldGreater.oldPerson(people));
     }
 }
