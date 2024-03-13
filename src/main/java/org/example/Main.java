@@ -4,14 +4,30 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        Person[] people = {
-                new Person("John", 15),
-                new Person("Juan", 19),
-                new Person("Martha", 26),
-                new Person("Lizeth", 13),
-                new Person("Luffy", 16),
-        };
+    int length = Integer.parseInt(JOptionPane.showInputDialog(null, "Insert the length of the array"));
+    int[] numbers = new int[length];
+    Main.insertData(numbers);
+    Main.showData(numbers);
+    }
 
-        System.out.println(OldGreater.oldPerson(people));
+    public static void insertData(int[] numbers){
+
+        JOptionPane.showMessageDialog(null, "Insert data of array");
+        for(int i = 0; i < numbers.length; i++){
+            numbers[i] = Integer.parseInt(JOptionPane.showInputDialog(
+                                    null,
+                                    "Insert a number "+ (i+1
+                                    )
+                            )
+            );
+        }
+    }
+
+    public static void showData(int[] numbers){
+        int i = 0;
+        for (int number : numbers) {
+            System.out.println((i + 1) + " " + number);
+            i++;
+        }
     }
 }
